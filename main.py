@@ -9,6 +9,7 @@ config.read("settings.ini")
 #
 TOKEN = config['DATA']['API_TOKEN']
 URL = config['DATA']['URL_HER']
+URl_TOKEN = config['DATA']['URL_TOKEN']
 #
 #
 #
@@ -18,7 +19,7 @@ bot = TeleBot(TOKEN)
 @app.route("/")
 def header():
     bot.remove_webhook()
-    bot.set_webhook(URL+TOKEN)
+    bot.set_webhook(URl_TOKEN)
     return '!', 200
 
 @bot.message_handler(commands=["start"])

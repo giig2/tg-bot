@@ -37,5 +37,4 @@ if __name__ == '__main__':
         kip_updates=True,
         on_startup=on_startup,
         on_shutdown=on_shutdown,
-        host=URL,
     )

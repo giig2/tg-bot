@@ -18,7 +18,7 @@ bot = TeleBot(TOKEN)
 @app.route("/")
 def header():
     bot.remove_webhook()
-    bot.set_webhook(URL)
+    bot.set_webhook(URL+TOKEN)
     return '!', 200
 
 @bot.message_handler(commands=["start"])

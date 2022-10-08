@@ -31,9 +31,10 @@ async def start(message):
 
 
 if __name__ == '__main__':
+
     start_webhook(
         dispatcher=dp,
-        webhook_path=URl_TOKEN,
+        webhook_path=f'/webhook/{TOKEN}',
         kip_updates=True,
         on_startup=on_startup,
         on_shutdown=on_shutdown,

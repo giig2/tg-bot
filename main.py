@@ -26,7 +26,7 @@ async def on_shutdown(dp):
 
 
 @dp.message_handler(commands=['start'])
-async def nnn(message):
+async def start(message):
     await bot.send_message(message.chat.id, "Привет")
 
 

@@ -18,6 +18,7 @@ print(TOKEN)
 app = Flask(__name__)
 bot = Bot(token=TOKEN)
 dp= Dispatcher(Bot(TOKEN))
+@app.route("/",methods=["POST"])
 async def on_startup(dp):
     await bot.set_webhook(URl_TOKEN, drop_pending_updates=True)
 async def on_shutdown(dp):

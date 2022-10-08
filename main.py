@@ -1,10 +1,8 @@
 from flask import Flask, request
-import os
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils.executor import start_webhook
 import configparser
-import logging
 config = configparser.ConfigParser()
 config.read("settings.ini")
 #

@@ -30,6 +30,7 @@ def get_message():
     return '!', 200
 @bot.message_handler(commands=["start"])
 def start(message):
+    print(1)
     bot.send_message(message.chat.id, "Привет")
 
 

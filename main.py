@@ -19,6 +19,12 @@ bot = TeleBot(TOKEN)
 def header():
     bot.remove_webhook()
     bot.set_webhook(URL)
+    return '!', 200
+
+@bot.message_handler(commands=["start"])
+def start(message):
+    bot.send_message(message.chat.id, "Привет")
+
 
 
 if __name__=="__main__":

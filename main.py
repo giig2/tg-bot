@@ -11,7 +11,7 @@ TOKEN = config['DATA']['API_TOKEN']
 URL = config['DATA']['URL_HER']
 URl_TOKEN = config['DATA']['URL_TOKEN']
 #
-#
+#https://api.telegram.org/bot5711773496:AAHyXFloUrGAkN_XAIhSWpfR1_4NZ2l73lk/setWebhook?url=https://tgbot225544.herokuapp.com/
 #
 app = Flask(__name__)
 bot = TeleBot(TOKEN)

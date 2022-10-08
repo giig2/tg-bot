@@ -1,7 +1,7 @@
 Flask==2.2.2
 pyTelegramBotAPI==4.7.0
 configparser==5.3.0
-aiogram = 2.22.2
+aiogram == 2.22.2
 
 
 

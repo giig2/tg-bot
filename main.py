@@ -21,7 +21,12 @@ def header():
     bot.remove_webhook()
     bot.set_webhook(URl_TOKEN)
     return '!', 200
-
+@app.route('/' + TOKEN, methods=['POST'])
+def get_message():
+    json_string = request.get_data().decode('utf-8')
+    update = types.Update.de_json(json_string)
+    bot.process_new_updates([update])
+    return '!', 200
 @bot.message_handler(commands=["start"])
 def start(message):
     bot.send_message(message.chat.id, "Привет")

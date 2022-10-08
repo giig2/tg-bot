@@ -35,4 +35,6 @@ if __name__ == '__main__':
         webhook_path=URl_TOKEN,
         kip_updates=True,
         on_startup=on_startup,
-        on_shutdown=on_shutdown)
+        on_shutdown=on_shutdown,
+        host=URL,
+    )

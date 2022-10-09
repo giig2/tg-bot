@@ -35,5 +35,5 @@ if __name__ == '__main__':
         skip_updates=True,
         on_shutdown=on_shutdown,
         webhook_path=f"/{TOKEN}",
-        host=URL,
+        host=URL
     )

@@ -13,7 +13,7 @@ config.read("settings.ini")
 TOKEN = config['DATA']['API_TOKEN']
 URL = config['DATA']['URL_HER']
 URl_TOKEN = config['DATA']['URL_TOKEN']
-WEBHOOK_PATH = f'/{TOKEN}'
+WEBHOOK_PATH = f'/'
 # webserver settings
 WEBAPP_HOST = '0.0.0.0'
 WEBAPP_PORT = os.getenv('PORT', default=8000)

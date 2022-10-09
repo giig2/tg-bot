@@ -27,8 +27,6 @@ dp= Dispatcher(Bot(TOKEN))
 #
 async def on_shutdown(dp):
     await bot.delete_webhook()
-async def on_startup(dp):
-    await bot.set_webhook(URL, drop_pending_updates=True)
 #
 #
 
@@ -43,7 +41,6 @@ if __name__ == '__main__':
         dispatcher=dp,
         webhook_path=WEBHOOK_PATH,
         on_shutdown=on_shutdown,
-        on_startup=on_startup,
         host=WEBAPP_HOST,
         port=WEBAPP_PORT,
     )

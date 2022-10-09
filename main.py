@@ -32,7 +32,6 @@ async def start(message):
 if __name__ == '__main__':
     start_webhook(
         dispatcher=dp,
-        skip_updates=True,
         on_shutdown=on_shutdown,
         webhook_path=f"/{TOKEN}"
     )

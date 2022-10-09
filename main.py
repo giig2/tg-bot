@@ -19,7 +19,7 @@ WEBAPP_HOST = '0.0.0.0'
 WEBAPP_PORT = os.getenv('PORT', default=8000)
 print(TOKEN)
 #
-#https://api.telegram.org/bot5657857094:AAGsQA1cqAv6CoF390JAmQp4qc9IM1CS-10/setWebhook?url=https://tgbot5544.herokuapp.com/
+#https://api.telegram.org/bot5657857094:AAGsQA1cqAv6CoF390JAmQp4qc9IM1CS-10/setWebhook?url=https://ggggbot4.herokuapp.com/
 #
 app = Flask(__name__)
 bot = Bot(token=TOKEN)

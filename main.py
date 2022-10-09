@@ -1,4 +1,5 @@
 import os
+
 from flask import Flask, request
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
@@ -10,11 +11,10 @@ config.read("settings.ini")
 #
 #
 TOKEN = config['DATA']['API_TOKEN']
-WEBHOOK_HOST = config['DATA']['URL_HER']
+URL = config['DATA']['URL_HER']
 URl_TOKEN = config['DATA']['URL_TOKEN']
-HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME')
 WEBHOOK_PATH = f'/{TOKEN}'
-WEBHOOK_URL = f'{WEBHOOK_HOST}{WEBHOOK_PATH}'
+# webserver settings
 WEBAPP_HOST = '0.0.0.0'
 WEBAPP_PORT = os.getenv('PORT', default=8000)
 print(TOKEN)
@@ -35,12 +35,9 @@ async def start(message):
 
 if __name__ == '__main__':
     start_webhook(
-        start_webhook(
-            dispatcher=dp,
-            webhook_path=f'/{TOKEN}',
-            skip_updates=True,
-            on_shutdown=on_shutdown,
-            host=WEBAPP_HOST,
-            port=WEBAPP_PORT,
-        )
+        dispatcher=dp,
+        webhook_path=WEBHOOK_PATH,
+        on_shutdown=on_shutdown,
+        host=WEBAPP_HOST,
+        port=WEBAPP_PORT,
     )

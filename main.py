@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, request
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
@@ -32,5 +34,6 @@ if __name__ == '__main__':
         dispatcher=dp,
         skip_updates=True,
         on_shutdown=on_shutdown,
-        webhook_path=f"/{TOKEN}"
+        webhook_path=f"/{TOKEN}",
+        host=URL,
     )

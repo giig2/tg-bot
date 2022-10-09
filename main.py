@@ -34,6 +34,7 @@ async def on_startup(dp):
 
 @dp.message_handler(commands=['start'])
 async def start(message):
+    print(1)
     await bot.send_message(message.chat.id, "Привет")
 
 

@@ -1,5 +1,5 @@
 import os
-
+import requests
 from flask import Flask, request
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
@@ -13,6 +13,7 @@ config.read("settings.ini")
 TOKEN = config['DATA']['API_TOKEN']
 URL = config['DATA']['URL_HER']
 URl_TOKEN = config['DATA']['URL_TOKEN']
+WEBHOOK_SET = config['DATA']['WEBHOOK_SET']
 WEBHOOK_PATH = f'/'
 # webserver settings
 WEBAPP_HOST = '0.0.0.0'
@@ -36,6 +37,7 @@ async def startcom(message: types.Message):
 
 
 if __name__ == '__main__':
+    requests.get(url=WEBHOOK_SET)
     start_webhook(
         dispatcher=dp,
         webhook_path=WEBHOOK_PATH,

@@ -32,7 +32,7 @@ async def on_shutdown(dp):
 
 @dp.message_handler(commands=['start'])
 async def startcom(message: types.Message):
-    await bot.answer(f"Привет,{message.from_user.first_name}")
+    await message.answer(f"Привет,{message.from_user.first_name}")
 
 
 if __name__ == '__main__':

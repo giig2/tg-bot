@@ -29,4 +29,5 @@ def start(message):
 
 
 if __name__ == '__main__':
+    app.run()
     requests.get(WEBHOOK_SET)

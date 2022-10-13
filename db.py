@@ -19,6 +19,7 @@ async def start(message: types.Message):
 async def photo(message: types.Message, state: FSMContext):
     async with state.proxy as data:
         data['photo'] = message.photo[0].file_id
+        print(message.photo[0].file_id)
 def reg(dp: Dispatcher):
     dp.register_message_handler(start, commands=['start'], state=None)
     dp.register_message_handler(photo, content_types=['photo'], state=ADMIN.photo)

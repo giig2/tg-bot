@@ -28,10 +28,11 @@ dp= Dispatcher(Bot(TOKEN))
 #
 async def on_shutdown(dp):
     await bot.delete_webhook()
-db.reg(dp=dp)
+
 @dp.message_handler(commands=['start'])
 async def startcom(msg: types.Message):
     await bot.send_message(msg.chat.id,"Привет")
+    await db.reg(dp=dp)
 
 
 if __name__ == '__main__':

@@ -32,6 +32,8 @@ async def on_shutdown(dp):
 @dp.message_handler(commands=['start'])
 async def startcom(msg: types.Message):
     await bot.send_message(msg.chat.id,"Привет")
+@dp.message_handler(commands=['text'])
+async def j(db:Dispatcher):
     await db.reg(dp=dp)
 
 

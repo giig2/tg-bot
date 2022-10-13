@@ -1,11 +1,8 @@
 import os
 import requests
-from flask import Flask, request
-from aiogram import Bot, types
-from aiogram.dispatcher import Dispatcher
-from aiogram.utils.executor import start_webhook
+from flask import Flask
 import configparser
-import db
+from telebot import TeleBot, types
 config = configparser.ConfigParser()
 config.read("settings.ini")
 #
@@ -23,26 +20,13 @@ print(TOKEN)
 #
 #
 app = Flask(__name__)
-bot = Bot(token=TOKEN)
-dp= Dispatcher(Bot(TOKEN))
-#
-async def on_shutdown(dp):
-    await bot.delete_webhook()
+bot = TeleBot(token=TOKEN)
 
-@dp.message_handler(commands=['start'])
-async def startcom(msg: types.Message):
-    await bot.send_message(msg.chat.id,"Привет")
-@dp.message_handler(commands=['text'])
-async def j(dp:Dispatcher):
-    await db.reg(dp=dp)
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.send_message(message.chat.id, "Привет")
+
 
 
 if __name__ == '__main__':
-    requests.get(url=WEBHOOK_SET)
-    start_webhook(
-        dispatcher=dp,
-        webhook_path=WEBHOOK_PATH,
-        on_shutdown=on_shutdown,
-        host=WEBAPP_HOST,
-        port=WEBAPP_PORT,
-    )
+    requests.get(WEBHOOK_SET)

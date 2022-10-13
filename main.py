@@ -31,3 +31,6 @@ def start(message):
 if __name__ == '__main__':
     app.run()
     requests.get(WEBHOOK_SET)
+    bot.run_webhooks(listen="0.0.0.0",
+                     port=os.getenv('PORT'),
+                     webhook_url=URL,)

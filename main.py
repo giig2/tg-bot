@@ -2,9 +2,11 @@ import os
 import requests
 from flask import Flask, request
 from aiogram import Bot, types
-from aiogram.dispatcher import Dispatcher
+from aiogram.dispatcher import Dispatcher, FSMContext
 from aiogram.utils.executor import start_webhook
 import configparser
+import db
+from aiogram.dispatcher.filters.state import State
 config = configparser.ConfigParser()
 config.read("settings.ini")
 #
@@ -35,6 +37,10 @@ async def on_shutdown(dp):
 async def startcom(msg: types.Message):
     print(1)
     await bot.send_message(msg.chat.id,"Привет")
+
+db.reg(dp=dp)
+
+
 
 
 if __name__ == '__main__':

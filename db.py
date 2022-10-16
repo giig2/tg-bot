@@ -14,7 +14,7 @@ commit = connect.commit()
 class load(StatesGroup):
     name = State()
 
-def create_table(message):
+async def create_table(message):
     try:
         connect.execute("CREATE TABLE `users` (id INTEGER PRIMARY KEY AUTOINCREMENT,chat_id INTEGER,name TEXT)")
     except Exception as a:

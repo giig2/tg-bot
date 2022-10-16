@@ -51,6 +51,7 @@ async def lod_name(message: types.Message, state: FSMContext):
     print(message.text)
     print(state.get_state())
     await state.get_state()
+    await state.finish()
 
 
 

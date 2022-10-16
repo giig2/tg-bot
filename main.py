@@ -60,9 +60,7 @@ async def pizza_size(message: types.Message, state: FSMContext):
         await bot.send_message(message.chat.id, "Выход", reply_markup=types.ReplyKeyboardRemove())
     elif pizn == "Мясная" and pizn == "Сырная" and pizn == "Веган":
         print(message.text)
-
-
-
+        await state.get_data()
 
 
 

@@ -59,10 +59,11 @@ async def pizza_size(message: types.Message, state: FSMContext):
     elif message.text == "Мясная" and message.text == "Сырная" and message.text == "Веган":
         ggg = await state.get_state()
         print(22)
+        print(ggg)
     pro = state.proxy()
     print()
     print(pro['name'])
-    print(ggg)
+
     await state.finish()
 
 

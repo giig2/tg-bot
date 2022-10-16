@@ -48,7 +48,8 @@ async def lod_name(message: types.Message, state: FSMContext):
 
 @dp.message_handler(commands=['pizza'], state=None)
 async def pizza_search(message:types.Message):
-    await bot.send_message(message.chat.id, "Выберите пиццу:", reply_markup=button.button_pizza)
+    but = types.ReplyKeyboardMarkup(button.button_pizza())
+    await bot.send_message(message.chat.id, "Выберите пиццу:", reply_markup=but)
 
 
 

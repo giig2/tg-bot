@@ -10,9 +10,10 @@ bot = Bot(token=TOKEN)
 dp= Dispatcher(bot, storage=storage)
 
 def button_pizza():
-    but = types.ReplyKeyboardMarkup()
-    but1 = types.KeyboardButton("Мясная")
-    but2 = types.KeyboardButton("Сырная")
-    but3 = types.KeyboardButton("Веган")
-    but_all = but.add(but1, but2, but3)
+    but_all=[[
+        types.KeyboardButton("Мясная"),
+        types.KeyboardButton("Сырная"),
+        types.KeyboardButton("Веган"),
+        #but_all = but.add(but1, but2, but3)
+    ]]
     return but_all

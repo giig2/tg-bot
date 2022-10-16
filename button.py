@@ -26,6 +26,6 @@ def button_pizza():
         types.KeyboardButton("Мясная"),
         types.KeyboardButton("Сырная"),
         types.KeyboardButton("Веган"),
-        types.KeyboardButton("Отмена")
+        types.KeyboardButton("Отмена"),
     ]]
     return but_all

@@ -14,5 +14,5 @@ def button_pizza():
     but1 = types.KeyboardButton("Мясная")
     but2 = types.KeyboardButton("Сырная")
     but3 = types.KeyboardButton("Веган")
-    but = but.add(but1, but2, but3)
-    return but
+    but_all = but.add(but1, but2, but3)
+    return but_all

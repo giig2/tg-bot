@@ -15,7 +15,8 @@ class load(StatesGroup):
     name = State()
 
  #def create_table(self, chat_id):
-        #self.connect.execute(f"CREATE TABLE {chat_id}(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT)")
+        #self.connect.execute(CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT,chat_id INTEGER,name TEXT))
+
 def select_all_users():
     all = connect.execute("SELECT * FROM `users`")
     print(all)

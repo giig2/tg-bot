@@ -50,6 +50,18 @@ async def lod_name(message: types.Message, state: FSMContext):
 async def pizza_search(message:types.Message):
     but = types.ReplyKeyboardMarkup(button.button_pizza())
     await bot.send_message(message.chat.id, "Выберите пиццу:", reply_markup=but)
+    await button.pizza.pizza_name.set()
+
+@dp.message_handler(state=button.pizza.pizza_name)
+async def pizza_size(message: types.Message, state: FSMContext):
+    pizn = message.text
+    if pizn=="Отмена":
+        state.reset_state()
+    elif pizn == button.mmm:
+        print(11)
+
+
+
 
 
 

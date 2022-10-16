@@ -7,7 +7,7 @@ config = configparser.ConfigParser()
 config.read("settings.ini")
 TOKEN = config['DATA']['API_TOKEN']
 bot = Bot(token=TOKEN)
-connect = sqlite3.connect('name.db', check_same_thread=False)
+connect = sqlite3.connect('data.db', check_same_thread=False)
 commit = connect.commit()
 #dp= Dispatcher(Bot(TOKEN))
 

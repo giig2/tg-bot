@@ -47,9 +47,8 @@ async def lod(message: types.Message, state: FSMContext):
 @dp.message_handler(state=db.load.name)
 async def lod_name(message: types.Message, state: FSMContext):
     name = message.text
-    current_state = await state.get_state()
     print(name)
-    print(current_state)
+    db.DATABASE.insert_name(name=name)
     await bot.send_message(message.chat.id, message.text)
     await state.finish()
 

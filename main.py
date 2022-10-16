@@ -62,6 +62,7 @@ async def pizza_size(message: types.Message, state: FSMContext):
         print(message.text)
         ggg = await state.get_data()
         print(ggg)
+    await state.finish()
 
 
 

@@ -55,6 +55,7 @@ async def pizza_search(message:types.Message):
 @dp.message_handler(state=button.pizza.pizza_name)
 async def pizza_size(message: types.Message, state: FSMContext):
     pizn = message.text
+    print(pizn)
     if pizn=="Отмена":
         await bot.send_message(message.chat.id, "Выход", reply_markup=types.ReplyKeyboardRemove())
     elif pizn == "Мясная" and pizn == "Сырная" and pizn == "Веган":

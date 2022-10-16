@@ -62,7 +62,7 @@ async def pizza_size(message: types.Message, state: FSMContext):
         print(ggg)
     pro = state.proxy()
     print()
-    print(pro['name'])
+    print(pro['pizza_name'])
 
     await state.finish()
 

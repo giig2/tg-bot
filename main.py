@@ -56,7 +56,7 @@ async def pizza_search(message:types.Message):
 async def pizza_size(message: types.Message, state: FSMContext):
     pizn = message.text
     if pizn=="Отмена":
-        state.reset_state()
+        await bot.send_message(message.chat.id, "Выход", reply_markup=types.ReplyKeyboardRemove())
     elif pizn == button.mmm:
         print(11)
 

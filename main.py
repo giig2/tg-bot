@@ -43,7 +43,6 @@ async def startcom(msg: types.Message):
 async def lod(message: types.Message, state: FSMContext):
     await bot.send_message(message.chat.id, "Напиши слово")
     await db.load.name.set()
-    print(state)
 
 @dp.message_handler(state=db.load.name)
 async def lod_name(message: types.Message, state: FSMContext):

@@ -20,7 +20,7 @@ def select_all_users():
     all = connect.execute("SELECT * FROM `users`")
     return all.fetchall()
 def insert_name(name):
-    connect.execute("INSERT FROM `users` VALUES name=(?)", (name))
+    connect.execute("INSERT INTO `users` VALUES name=(?)", (name))
 
 
 

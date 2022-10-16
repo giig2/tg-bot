@@ -54,7 +54,7 @@ async def lod_name(message: types.Message, state: FSMContext):
 
 @dp.message_handler(commands=['create'])
 def create_table(message: types.Message):
-    db.create_table(message)
+    await db.create_table(message)
 
 
 

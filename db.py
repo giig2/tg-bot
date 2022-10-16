@@ -18,8 +18,9 @@ async def create_table(message):
     try:
         connect.execute("CREATE TABLE `users` (id INTEGER PRIMARY KEY AUTOINCREMENT,chat_id INTEGER,name TEXT)")
     except Exception as a:
-        await bot.send_message(message.chat.id, "Таблица не создана. Ошибка")
+        mess = bot.send_message(message.chat.id, "Таблица не создана. Ошибка")
         print(a)
+        return mess
 
 def select_all_users():
     all = connect.execute("SELECT * FROM `users`")

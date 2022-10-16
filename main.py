@@ -24,10 +24,10 @@ print(TOKEN)
 #https://api.telegram.org/bot5657857094:AAGsQA1cqAv6CoF390JAmQp4qc9IM1CS-10/getWebhookInfo
 #https://api.telegram.org/bot5657857094:AAGsQA1cqAv6CoF390JAmQp4qc9IM1CS-10/setWebhook?url=https://ggggbot4.herokuapp.com/
 #
-storage = MemoryStorage
+storage = MemoryStorage()
 app = Flask(__name__)
 bot = Bot(token=TOKEN)
-dp= Dispatcher(bot, storage)
+dp= Dispatcher(bot, storage=storage)
 #
 async def on_shutdown(dp):
     await bot.delete_webhook()

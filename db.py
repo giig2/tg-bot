@@ -20,8 +20,8 @@ def select_all_users():
     all = connect.execute("SELECT * FROM `users`")
     print(all)
     print(all.fetchall())
-def insert_name(name):
-    connect.execute("INSERT INTO `users` (`name`) VALUES (?)", (name,))
+def insert_name(name, chat_id):
+    connect.execute("INSERT INTO `users` (`name`, `chat_id`) VALUES (?,?)", (name, chat_id))
 
 
 

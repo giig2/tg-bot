@@ -18,7 +18,8 @@ class load(StatesGroup):
         #self.connect.execute(f"CREATE TABLE {chat_id}(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT)")
 def select_all_users():
     all = connect.execute("SELECT * FROM `users`")
-    return all
+    print(all)
+    print(all.fetchall())
 def insert_name(name):
     connect.execute("INSERT INTO `users` (`name`) VALUES (?)", (name,))
 

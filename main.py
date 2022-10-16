@@ -49,7 +49,6 @@ async def lod_name(message: types.Message, state: FSMContext):
     name = message.text
     print(name)
     db.insert_name(name=name)
-    print(db.select_all_users())
     await bot.send_message(message.chat.id, f"Запомнил, приветик  {message.text}")
     await state.finish()
 

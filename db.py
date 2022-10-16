@@ -20,7 +20,7 @@ async def create_table(message):
     except Exception as a:
         mess = bot.send_message(message.chat.id, "Таблица не создана. Ошибка")
         print(a)
-        return mess
+        return await mess
 
 def select_all_users():
     all = connect.execute("SELECT * FROM `users`")

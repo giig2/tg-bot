@@ -52,6 +52,11 @@ async def lod_name(message: types.Message, state: FSMContext):
     await bot.send_message(message.chat.id, f"Запомнил, приветик  {message.text}")
     await state.finish()
 
+@dp.message_handler(commands=['create'])
+def create_table(message: types.Message):
+    db.create_table(message)
+
+
 
 
 if __name__ == '__main__':

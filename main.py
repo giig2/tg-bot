@@ -63,6 +63,7 @@ async def pizza_size(message: types.Message, state: FSMContext):
     async with pro as i:
         i['pizza_name'] = message.text
         print(i['pizza_name'])
+        print(pro)
 
 
 

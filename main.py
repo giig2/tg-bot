@@ -57,13 +57,13 @@ async def pizza_size(message: types.Message, state: FSMContext):
     if message.text == "Отмена":
         await bot.send_message(message.chat.id, "Выход", reply_markup=types.ReplyKeyboardRemove())
     elif message.text == "Мясная" or message.text == "Сырная" or message.text == "Веган":
-        ggg = await state.get_state()
         print(22)
-        print(ggg)
     pro = state.proxy()
-    print()
+    print(pro)
     async with pro as i:
         i['pizza_name'] = message.text
+        print(i['pizza_name'])
+
 
 
     await state.finish()
